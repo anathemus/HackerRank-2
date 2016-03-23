@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution 
+{
+    static void Main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+        String numTestCases;
+        int testCases;
+        String testCaseStr;
+        int[] answerArray;
+        int x;
+        int y;
+        
+        numTestCases = Console.ReadLine();
+        bool hasTestCases = Int32.TryParse(numTestCases, out testCases);
+        if (hasTestCases)
+        {
+            for (int i = 0; i < testCases; i++)
+            {
+                testCaseStr = Console.ReadLine();
+                answerArray = testCaseStr.Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
+                x = 2 * answerArray[2] - answerArray[0];
+                y = 2 * answerArray[3] - answerArray[1];
+                Console.WriteLine("{0} {1}", x, y);
+            }
+            
+        }
+    }
+}
